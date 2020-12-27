@@ -2,23 +2,34 @@ import React from 'react';
 //Navigation
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 //Pages
-import {Main} from './pages';
+import {Main, ArrayFilter} from './pages';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const Router = (props) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
-          component={Main}
+          component={sideBarMenu}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
+
+function sideBarMenu() {
+  return (
+    <Drawer.Navigator initialRouteName="Main">
+      <Drawer.Screen name="Home" component={Main} />
+      <Drawer.Screen name="Array" component={ArrayFilter} />
+    </Drawer.Navigator>
+  );
+}
 
 export default Router;
