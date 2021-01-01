@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 //Pages
-import {Main, ArrayFilter, Timer} from './pages';
+import {Main, ArrayFilter, Timer, Layout} from './pages';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -29,6 +29,7 @@ function sideBarMenu() {
       <Drawer.Screen name="Home" component={Main} />
       <Drawer.Screen name="Array" component={ArrayFilter} />
       <Drawer.Screen name="Timer" component={Timer} />
+      <Drawer.Screen name="Layout" component={Layout} />
     </Drawer.Navigator>
   );
 }

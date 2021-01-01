@@ -50,6 +50,68 @@ const Styles = {
         flex: 1,
       },
     }),
+    layout: StyleSheet.create({
+      container: {
+        flex: 1,
+      },
+      row: {
+        flex: 1,
+        margin: 10,
+        justifyContent: 'space-around',
+      },
+      header: {
+        flex: 0.7,
+        backgroundColor: '#00D9EB',
+        margin: 3,
+      },
+      bodyContainer: {
+        flex: 6,
+        justifyContent: 'space-between',
+      },
+      bodyRow: {
+        flex: 1,
+        flexDirection: 'row',
+      },
+      hero: {
+        flex: 1,
+        backgroundColor: '#DDC4E3',
+        margin: 3,
+      },
+      sidebar: {
+        flex: 2,
+        backgroundColor: '#89CE60',
+        margin: 3,
+      },
+      mainContent: {
+        flex: 3,
+        backgroundColor: '#FDCB28',
+        margin: 3,
+      },
+      extraContent: {
+        flex: 1,
+        backgroundColor: '#898989',
+        margin: 3,
+      },
+      bottomContainer: {
+        flex: 1,
+        flexDirection: 'row',
+      },
+      relatedImages: {
+        flex: 1,
+        backgroundColor: '#00C372',
+        margin: 3,
+      },
+      relatedPost: {
+        flex: 0.3,
+        margin: 3,
+        backgroundColor: '#FFC5DE',
+      },
+      footer: {
+        flex: 0.7,
+        backgroundColor: '#FFA300',
+        margin: 3,
+      },
+    }),
   },
 };
 
