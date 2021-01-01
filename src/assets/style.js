@@ -42,6 +42,14 @@ const Styles = {
         alignItems: 'center',
       },
     }),
+    timer: StyleSheet.create({
+      container: {
+        flex: 1,
+      },
+      row: {
+        flex: 1,
+      },
+    }),
   },
 };
 
