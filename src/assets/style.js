@@ -1,7 +1,28 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
+//Bootstrap button colors
+// Btn Danger : #F80044
+// Btn Warning: #FFC500
+// Btn Info :   #00CDF1
+// Btn dark :   #202529
+// Btn secondary : #6A757D
+// Btn primary: #2648FF
+// Btn Light : #F8F9FA
+
 const Styles = {
-  components: {},
+  components: {
+    listItemComp: StyleSheet.create({
+      container: {
+        flex: 1,
+        justifyContent: 'center',
+      },
+      text: {
+        fontSize: 18,
+        textAlign: 'left',
+        letterSpacing: 2,
+      },
+    }),
+  },
   pages: {
     arrayfilter: StyleSheet.create({
       container: {
@@ -110,6 +131,57 @@ const Styles = {
         flex: 0.7,
         backgroundColor: '#FFA300',
         margin: 3,
+      },
+    }),
+    brackets: StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: '#ffffff',
+      },
+      question: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      questionText: {
+        textAlign: 'center',
+        fontSize: 15,
+        width: Dimensions.get('window').width / 1.5,
+      },
+      bodyContainer: {
+        flex: 2.5,
+      },
+      bodyContainerText: {
+        textAlign: 'center',
+        fontSize: 15,
+      },
+      flatList: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      button: {
+        flex: 1.8,
+        justifyContent: 'center',
+        // alignItems: 'center',
+        // backgroundColor: 'black',
+      },
+      listItemBtn: {
+        height: 45,
+        width: Dimensions.get('window').width / 2.6,
+        borderWidth: 1.3,
+        borderColor: '#F80044',
+        borderRadius: 10,
+        justifyContent: 'center',
+        paddingLeft: 15,
+      },
+      footer: {
+        flex: 1.5,
+        justifyContent: 'center',
+      },
+      footerText: {
+        fontSize: 20,
+        textAlign: 'center',
       },
     }),
   },
