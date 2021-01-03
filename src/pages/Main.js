@@ -1,26 +1,17 @@
 import React from 'react';
 import {SafeAreaView, View, Text, Dimensions} from 'react-native';
-
-// const Data = [
-//   {
-//     title: 'Items founder',
-//     description: 'Function  found duplicate items in an array',
-//   },
-//   {
-//     title: 'Item printer',
-//     description: 'Write function for prints of each item timing',
-//   },
-// ];
-
-// const sectionList = ({title}) => {
-//   <View>
-//     <Text>{title}</Text>
-//   </View>;
-// };
+//Custom Components
+import {Hamburger} from '../components';
 
 const Main = (props) => {
+  const openMenu = () => {
+    props.navigation.openDrawer();
+  };
   return (
     <SafeAreaView style={{flex: 1}}>
+      <View style={{position: 'absolute', left: 20, top: 20}}>
+        <Hamburger hamburger={openMenu} />
+      </View>
       <View
         style={{
           flex: 1,
@@ -47,14 +38,6 @@ const Main = (props) => {
             What is going on this project we are gonna establish piece by piece.
             Section
           </Text>
-          {/* <View>
-            <SectionList
-              sections={Data}
-              keyExtractor={(item, index) => item + index}
-              renderItem={({item}) => <sectionList title={item} />}
-              renderSectionHeader={({section: {title}}) => <Text>{title}</Text>}
-            />
-          </View> */}
         </View>
       </View>
     </SafeAreaView>

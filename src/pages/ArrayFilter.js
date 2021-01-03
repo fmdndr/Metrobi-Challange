@@ -1,21 +1,37 @@
 import React, {useState} from 'react';
 import {SafeAreaView, View, Text, Dimensions} from 'react-native';
 // Custom Resuable Components
-import {InputComponent, ButtonComponent} from '../components';
+import {ButtonComponent, Hamburger} from '../components';
 // Custom Styles
 import styles from '../assets/style';
+
 //Array inputs
 
 const ArrayFilter = (props) => {
-  let strArray = ['q', 'w', 'w', 'w', 'e', 'i', 'u', 'r', 'r'];
-  const findDuplicates = (arr) =>
-    arr.filter((item, index) => arr.indexOf(item) != index);
+  const [unique, setUnique] = useState([]);
 
-  // const found = findDuplicates(strArray);
-  const foundUnique = [...new Set(findDuplicates(strArray))];
+  let duplicatedArray = ['q', 'w', 'w', 'q', 'e', 'i', 'u', 'r'];
+
+  const findDuplicates = (arr) => {
+    let sorted_arr = arr.slice().sort();
+    let results = [];
+    for (let i = 0; i < sorted_arr.length - 1; i++) {
+      if (sorted_arr[i + 1] == sorted_arr[i]) {
+        results.push(sorted_arr[i] + ',');
+        setUnique(results);
+      }
+    }
+    return results;
+  };
+  const openMenu = () => {
+    props.navigation.openDrawer();
+  };
 
   return (
     <SafeAreaView style={styles.pages.arrayfilter.container}>
+      <View style={{position: 'absolute', left: 20, top: 20}}>
+        <Hamburger hamburger={openMenu} />
+      </View>
       <View style={styles.pages.arrayfilter.row}>
         <View style={{width: Dimensions.get('window').width / 1.4}}>
           <Text>
@@ -24,17 +40,18 @@ const ArrayFilter = (props) => {
           </Text>
         </View>
         <View>
-          <Text> ['q', 'w', 'w', 'w', 'e', 'i', 'u', 'r']</Text>
-          <Text>Duplicated items of an array</Text>
-          <Text>{foundUnique}</Text>
+          <Text>['q', 'w', 'w', 'q', 'e', 'i', 'u', 'r'] {'\n'}</Text>
+          <Text>Duplicated items of an array {'\n'} </Text>
+          <Text style={{letterSpacing: 4}}>{unique}</Text>
         </View>
-        {/* <View>
+        <View>
           <ButtonComponent
             btnStyle={styles.pages.arrayfilter.btnStyle}
-            btnOnPressed={uniqueNames}
+            btnTextStyle={styles.pages.arrayfilter.btnTextStyle}
+            btnOnPressed={() => findDuplicates(duplicatedArray)}
             btnText="Generate Array"
           />
-        </View> */}
+        </View>
       </View>
     </SafeAreaView>
   );
