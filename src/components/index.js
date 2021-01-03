@@ -1,3 +1,3 @@
-export * from './InputComponent';
 export * from './ButtonComponent';
 export * from './ListItemComp';
+export * from './Hambuger';

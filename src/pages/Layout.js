@@ -1,11 +1,20 @@
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
+import {Hamburger} from '../components';
 //styles
 import styles from '../assets/style';
+
 const Layout = (props) => {
+  const openMenu = () => {
+    props.navigation.openDrawer();
+  };
   return (
-    <SafeAreaView style={styles.pages.layout.container}>
+    <SafeAreaView style={{flex: 1}}>
       <View style={styles.pages.layout.row}>
+        <View
+          style={{position: 'absolute', right: 5, bottom: 10, zIndex: 9999}}>
+          <Hamburger hamburger={openMenu} />
+        </View>
         <View style={styles.pages.layout.header}>
           <Text> Header</Text>
         </View>

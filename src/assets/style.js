@@ -33,34 +33,17 @@ const Styles = {
         alignItems: 'center',
         justifyContent: 'space-evenly',
       },
-      inputContainer: {
-        flex: 1,
-        margin: 10,
-      },
-      inputStyle: {
-        justifyContent: 'center',
-        textAlign: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 1,
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 1.41,
 
-        elevation: 2,
-      },
       btnStyle: {
-        width: Dimensions.get('window').width / 2.3,
-        backgroundColor: 'blue',
-        justifyContent: 'center',
-        alignItems: 'center',
-        //height: 30,
+        height: Dimensions.get('window').height / 18,
+        width: Dimensions.get('window').width / 2.8,
+        borderWidth: 1.3,
+        borderColor: '#F80044',
         borderRadius: 10,
+        justifyContent: 'center',
       },
       btnTextStyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        textAlign: 'center',
       },
     }),
     timer: StyleSheet.create({
@@ -68,7 +51,17 @@ const Styles = {
         flex: 1,
       },
       row: {
-        flex: 1,
+        flex: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      btn: {
+        height: Dimensions.get('window').height / 18,
+        width: Dimensions.get('window').width / 5,
+        borderWidth: 1.3,
+        borderColor: '#F80044',
+        borderRadius: 10,
+        justifyContent: 'center',
       },
     }),
     layout: StyleSheet.create({
@@ -161,14 +154,14 @@ const Styles = {
         alignItems: 'center',
       },
       button: {
-        flex: 1.8,
+        flex: 4,
         justifyContent: 'center',
         // alignItems: 'center',
         // backgroundColor: 'black',
       },
       listItemBtn: {
         height: 45,
-        width: Dimensions.get('window').width / 2.6,
+        width: Dimensions.get('window').width / 2,
         borderWidth: 1.3,
         borderColor: '#F80044',
         borderRadius: 10,

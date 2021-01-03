@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {SafeAreaView, View, Text, Dimensions, FlatList} from 'react-native';
+import {SafeAreaView, View, Text, FlatList} from 'react-native';
 // Custom styles
 import styles from '../assets/style';
 // Custom Components
-import {ListItemComp} from '../components';
+import {ListItemComp, Hamburger} from '../components';
 
 const Brackets = (props) => {
   const [state, setState] = useState(false);
@@ -50,8 +50,14 @@ const Brackets = (props) => {
     );
   };
 
+  const openMenu = () => {
+    props.navigation.openDrawer();
+  };
   return (
     <SafeAreaView style={styles.pages.brackets.container}>
+      <View style={{position: 'absolute', left: 20, top: 20}}>
+        <Hamburger hamburger={openMenu} />
+      </View>
       <View style={styles.pages.brackets.question}>
         <Text style={styles.pages.brackets.questionText}>
           4) Write an efficient method that tells us whether or not an input
