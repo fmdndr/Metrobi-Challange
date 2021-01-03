@@ -33,3 +33,15 @@ Example:
 carrotTypes = [{kg: 5, price: 100}, {kg: 7, price: 150}, {kg: 3, price: 70}]
 capacity = 36 //kg
 getMaxValue(carrotTypes, capacity)
+
+***Answer for question 5***
+ In this question we have 3 different level answer. I would like to explain most efficient answer.
+ Formula =  n(n+1) / 2 >= 100
+            n^2 + n >=200
+            n(n+1) >=200
+if we give n to 14 then we get right of equation 210. It means  in any best  worst case scenario
+we will get the result after 14 drops.
+
+Some source for about understanding the mathematich behind of question:
+[I'm math link](https://www.cymath.com/answer?latex&q=x%5E2%2Bx%3E%3D100)
+
