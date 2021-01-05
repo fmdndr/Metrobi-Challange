@@ -49,6 +49,9 @@ const Layout = (props) => {
         <View style={styles.pages.layout.footer}>
           <Text>Footer</Text>
         </View>
+        <View style={{position: 'absolute', bottom: 10, right: 20}}>
+          <Hamburger hamburger={openMenu} />
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -1,24 +1,32 @@
 import React, {useState} from 'react';
-import {SafeAreaView, View, Text, Dimensions} from 'react-native';
+import {SafeAreaView, View, Text, Dimensions, AsyncStorage} from 'react-native';
 // Custom Styles
 import styles from '../assets/style';
 //
 import {ButtonComponent, Hamburger} from '../components';
 
 const Timer = (props) => {
-  const [items, setItems] = useState(['a', 'b', 'c', 'k', 'l']);
+  const [items, setItems] = useState(['a', 'b', 'c', 'd', 'l']);
   const [display, setDisplay] = useState('');
   const [timer, setTimer] = useState(1000);
 
   function getTimeOut() {
-    items.forEach((item, index) => {
+    let promises = items.map((el, index) => {
       let timeout = 1000 * Math.pow(2, index);
-      setTimeout(() => {
-        setDisplay(item);
-        setTimer(timeout);
-      }, timeout);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          setDisplay(el);
+          resolve(el);
+          setTimer(timeout);
+        }, timeout);
+      });
+    });
+
+    Promise.all(promises).then(() => {
+      setDisplay('done');
     });
   }
+
   const openMenu = () => {
     props.navigation.openDrawer();
   };
