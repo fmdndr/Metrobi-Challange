@@ -177,6 +177,40 @@ const Styles = {
         textAlign: 'center',
       },
     }),
+    eggs: StyleSheet.create({
+      container: {
+        flex: 1,
+      },
+      quesContainer: {
+        flex: 1,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      },
+      quesText: {
+        width: Dimensions.get('window').width / 1.3,
+        textAlign: 'center',
+      },
+      btnContainer: {
+        flex: 1,
+      },
+      btnRow: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      btn: {
+        width: Dimensions.get('window').width / 2.3,
+        height: Dimensions.get('window').height / 19,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1.3,
+        borderColor: '#F80044',
+        borderRadius: 10,
+      },
+      btnText: {
+        color: '#F80044',
+      },
+    }),
   },
 };
 
